@@ -13,5 +13,5 @@ runs:
       id: howdoi_docker
       with: 
         search: ${{ inputs.search }}
-    - run: echo ${{ steps.howdoi_docker.outputs.answer}}
+    - run: echo ${{ env.ANSWER }}
       shell: bash
