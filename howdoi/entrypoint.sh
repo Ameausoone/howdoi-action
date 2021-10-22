@@ -6,7 +6,6 @@ set -o errexit
 
 GITHUB_ENV=${GITHUB_ENV:-/tmp/github_env}
 
-ANSWER="$(howdoi $@)"
 echo "ANSWER<<EOF" >> $GITHUB_ENV
-echo "${ANSWER}" >> $GITHUB_ENV
+howdoi $@ >> $GITHUB_ENV
 echo "EOF" >> $GITHUB_ENV
