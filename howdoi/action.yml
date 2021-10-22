@@ -4,9 +4,6 @@ inputs:
   search:
     description: 'What is your issue ?'
     required: true
-outputs:
-  answer: # id of output
-    description: 'Your solution'
 runs:
   using: 'docker'
   image: 'Dockerfile'

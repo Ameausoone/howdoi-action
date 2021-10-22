@@ -10,5 +10,3 @@ ANSWER="$(howdoi $@)"
 echo "ANSWER<<EOF" >> $GITHUB_ENV
 echo "${ANSWER}" >> $GITHUB_ENV
 echo "EOF" >> $GITHUB_ENV
-
-echo "$ANSWER"

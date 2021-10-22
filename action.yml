@@ -4,13 +4,12 @@ inputs:
   search:
     description: 'What is your issue ?'
     required: false
-    default: "how to build small docker image"
+    default: "shell how to parse file line by line"
 
 runs:
   using: "composite"
   steps:
     - uses: ./howdoi/
-      id: howdoi_docker
       with: 
         search: ${{ inputs.search }}
     - run: echo ${{ env.ANSWER }}
