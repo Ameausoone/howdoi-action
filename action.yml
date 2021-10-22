@@ -12,5 +12,5 @@ runs:
     - uses: ./howdoi/
       with: 
         search: ${{ inputs.search }}
-    - run: echo ${{ env.ANSWER }}
+    - run: echo "${{ env.ANSWER }}"
       shell: bash
