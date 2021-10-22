@@ -3,7 +3,8 @@ description: 'Looking for an issue and post results to an issue in response.'
 inputs:
   search:
     description: 'What is your issue ?'
-    required: true
+    required: false
+    default: "how to build small docker image"
 
 runs:
   using: "composite"
