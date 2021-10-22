@@ -5,7 +5,7 @@ inputs:
     description: 'What is your issue ?'
     required: true
 outputs:
-  result: # id of output
+  answer: # id of output
     description: 'Your solution'
 runs:
   using: 'docker'

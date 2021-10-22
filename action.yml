@@ -10,5 +10,8 @@ runs:
   using: "composite"
   steps:
     - uses: ./howdoi/
+      id: howdoi_docker
       with: 
         search: ${{ inputs.search }}
+    - run: echo ${{ steps.howdoi_docker.outputs.answer}}
+      shell: bash
