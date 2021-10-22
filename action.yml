@@ -1,15 +1,13 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'How do I'
+description: 'Looking for an issue and post results to an issue in response.'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  search:
+    description: 'What is your issue ?'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.who-to-greet }}
+  using: "composite"
+  steps:
+    - uses: ./howdoi/
+      with: 
+        search: ${{ inputs.search }}

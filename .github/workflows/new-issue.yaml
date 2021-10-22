@@ -1,0 +1,12 @@
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  howdoi:
+    runs-on: ubuntu-latest
+    name: A job to use howdoi
+    steps:
+      - uses: ./
+      

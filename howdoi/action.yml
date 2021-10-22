@@ -1,0 +1,14 @@
+name: 'How do I'
+description: 'Search code solution with howdoi '
+inputs:
+  search:
+    description: 'What is your issue ?'
+    required: true
+outputs:
+  result: # id of output
+    description: 'Your solution'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.search }}
