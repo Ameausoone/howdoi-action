@@ -6,7 +6,7 @@ inputs:
     required: false
     default: "shell how to parse file line by line"
   pull_request_number:
-    description: 'id of the pull requestion to update, setup up with ${{ github.event.pull_request.number }}'
+    description: 'id of the pull requestion to update, setup up with \"github.event.pull_request.number\"'
     required: true
 runs:
   using: "composite"
