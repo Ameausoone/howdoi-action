@@ -1,23 +1,24 @@
-# Hello world docker action
+# How do I action
 
-This action prints "Hello World" to the log or "Hello" + the name of a person to greet. To learn how this action was built, see "[Creating a Docker container action](https://help.github.com/en/articles/creating-a-docker-container-action)" in the GitHub Help documentation.
-
-## Inputs
-
-### `who-to-greet`
-
-**Required** The name of the person to greet. Default `"World"`.
+This Action wrap [howdoi](https://github.com/gleitz/howdoi) cli : it will search with howdoi cli a solution of an issue title, and post it as answer.
 
 ## Outputs
 
-### `time`
+### issue comment
 
-The time we greeted you.
-
+Github action will add answer in issue comment.
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-docker-action@master
-with:
-  who-to-greet: 'Mona the Octocat'
+on:
+  issues:
+    types:
+      - opened
+name: Search for solution with HowDoI
+jobs:
+  howdoi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ameausoone/howdoi-action:v1
+
 ```
