@@ -5,7 +5,9 @@ inputs:
     description: 'What is your issue ?'
     required: false
     default: "shell how to parse file line by line"
-
+  pull_request_number:
+    description: 'id of the pull requestion to update, setup up with ${{ github.event.pull_request.number }}'
+    required: true
 runs:
   using: "composite"
   steps:
@@ -14,3 +16,9 @@ runs:
         search: ${{ inputs.search }}
     - run: echo "${{ env.ANSWER }}"
       shell: bash
+    - name: Create or update comment
+      uses: peter-evans/create-or-update-comment@v1
+      with:
+        issue-number: ${{ github.event.pull_request.number }}
+        body: |
+          ${{ env.ANSWER }}

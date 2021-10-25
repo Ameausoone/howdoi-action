@@ -10,4 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./
-      
+        with: 
+          pull_request_number: ${{ github.event.pull_request.number }}
+          search: ${{ github.event.comment.title }}
