@@ -1,24 +1,24 @@
 name: 'How do I'
 description: 'Looking for an issue and post results to an issue in response.'
-inputs:
-  search:
-    description: 'What is your issue ?'
-    required: false
-    default: "shell how to parse file line by line"
-  pull_request_number:
-    description: 'id of the pull requestion to update, setup up with \"github.event.pull_request.number\"'
-    required: true
+#inputs:
+  # search:
+  #   description: 'What is your issue ?'
+  #   required: false
+  #   default: "shell how to parse file line by line"
+  # pull_request_number:
+  #   description: 'id of the pull requestion to update, setup up with \"github.event.pull_request.number\"'
+  #   required: true
 runs:
   using: "composite"
   steps:
     - uses: ./howdoi/
       with: 
-        search: ${{ inputs.search }}
+        search: ${{ github.event.issue.title }}
     - run: echo "${{ env.ANSWER }}"
       shell: bash
     - name: Create or update comment
       uses: peter-evans/create-or-update-comment@v1
       with:
-        issue-number: ${{ inputs.pull_request_number }}
+        issue-number: ${{ github.event.issue.number }}
         body: |
           ${{ env.ANSWER }}

@@ -9,10 +9,6 @@ jobs:
     name: A job to use howdoi
     steps:
       - uses: actions/checkout@v2
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"
       - uses: ./
         with: 
           pull_request_number: ${{ github.event.issue.number }}
