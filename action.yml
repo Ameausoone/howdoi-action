@@ -19,6 +19,6 @@ runs:
     - name: Create or update comment
       uses: peter-evans/create-or-update-comment@v1
       with:
-        issue-number: ${{ github.event.pull_request.number }}
+        issue-number: ${{ inputs.pull_request_number }}
         body: |
           ${{ env.ANSWER }}
