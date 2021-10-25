@@ -16,4 +16,4 @@ jobs:
       - uses: ./
         with: 
           pull_request_number: ${{ github.event.issue.number }}
-          search: ${{ github.event.comment.title }}
+          search: ${{ github.event.issue.title }}
