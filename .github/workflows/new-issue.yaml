@@ -15,5 +15,5 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
       - uses: ./
         with: 
-          pull_request_number: ${{ github.event.pull_request.number }}
+          pull_request_number: ${{ github.event.issue.number }}
           search: ${{ github.event.comment.title }}
