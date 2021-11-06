@@ -11,7 +11,7 @@ description: 'Looking for an issue and post results to an issue in response.'
 runs:
   using: "composite"
   steps:
-    - uses: ./howdoi/
+    - uses: ameausoone/howdoi-action/howdoi@v1.x
       with: 
         search: ${{ github.event.issue.title }}
     - run: echo "${{ env.ANSWER }}"
