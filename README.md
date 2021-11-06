@@ -19,6 +19,6 @@ jobs:
   howdoi:
     runs-on: ubuntu-latest
     steps:
-      - uses: ameausoone/howdoi-action:v1
+      - uses: ameausoone/howdoi-action@v1
 
 ```
