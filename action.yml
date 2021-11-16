@@ -1,4 +1,4 @@
-name: 'How do I'
+name: 'HowDoI action'
 description: 'Looking for an issue and post results to an issue in response.'
 #inputs:
   # search:
